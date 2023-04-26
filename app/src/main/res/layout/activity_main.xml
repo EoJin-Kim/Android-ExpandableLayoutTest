@@ -24,35 +24,58 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="vertical"
             android:animateLayoutChanges="true"
-            app:layout_constraintBottom_toTopOf="@+id/bottom"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/top">
 
+
             <com.skydoves.expandablelayout.ExpandableLayout
-                android:id="@+id/expandable"
+                android:id="@+id/expandable1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:expandable_duration="200"
                 app:expandable_isExpanded="false"
                 app:expandable_parentLayout="@layout/layout_tab1"
-                app:expandable_secondLayout="@layout/layout_tab1_content"/>
+                app:expandable_secondLayout="@layout/layout_tab1_content"
+                app:expandable_showSpinner="false" />
 
+            <com.skydoves.expandablelayout.ExpandableLayout
+                android:id="@+id/expandable2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:expandable_duration="200"
+                app:expandable_isExpanded="false"
+                app:expandable_parentLayout="@layout/layout_tab2"
+                app:expandable_secondLayout="@layout/layout_tab2_content"
+                app:expandable_showSpinner="false" />
+
+            <com.skydoves.expandablelayout.ExpandableLayout
+                android:id="@+id/expandable3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:expandable_duration="200"
+                app:expandable_isExpanded="false"
+                app:expandable_parentLayout="@layout/layout_tab3"
+                app:expandable_secondLayout="@layout/layout_tab3_content"
+                app:expandable_showSpinner="false" />
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/bottom"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
             android:background="@color/purple_200"
             android:text="bottom"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

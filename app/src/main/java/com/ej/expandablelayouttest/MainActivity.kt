@@ -1,12 +1,9 @@
 package com.ej.expandablelayouttest
 
 import android.os.Bundle
-import android.view.View
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.view.animation.TranslateAnimation
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import com.ej.expandablelayouttest.databinding.ActivityMainBinding
 
@@ -19,8 +16,25 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        binding.expandable.parentLayout.setOnClickListener {
-            binding.expandable.toggleLayout()
+        binding.expandable1.parentLayout.setOnClickListener {
+            binding.expandable1.expand()
+            binding.expandable2.collapse()
+            binding.expandable3.collapse()
+        }
+        binding.expandable2.parentLayout.setOnClickListener {
+            binding.expandable1.collapse()
+            binding.expandable2.expand()
+            binding.expandable3.collapse()
+        }
+        binding.expandable3.parentLayout.setOnClickListener {
+            binding.expandable1.collapse()
+            binding.expandable2.collapse()
+            binding.expandable3.expand()
+        }
+
+        val textView = binding.expandable1.secondLayout.findViewById<TextView>(R.id.textView)
+        textView.setOnClickListener {
+            Toast.makeText(baseContext,"content click", Toast.LENGTH_SHORT).show()
         }
     }
 }
